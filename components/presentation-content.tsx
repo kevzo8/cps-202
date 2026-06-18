@@ -202,7 +202,7 @@ export default function PresentationContent() {
           )}
         </button>
         <div className="text-xs text-muted-foreground opacity-60">
-          Use ← → arrows | or click pages
+          Use ← → arrows | click dots to jump
         </div>
       </div>
     </div>

@@ -5,13 +5,15 @@ import { CheckCircle2 } from 'lucide-react';
 
 export default function AgendaSlide() {
   const agendaItems = [
-    { title: 'Assessment Scope', desc: 'What we reviewed' },
-    { title: 'Security Findings', desc: '8 critical & high-risk issues' },
-    { title: 'Current Status', desc: 'Remediation progress' },
-    { title: 'Business Impact', desc: 'Risk to operations' },
-    { title: 'Implementation Timeline', desc: 'Path to production' },
+    { title: 'Assessment Scope', desc: '28-section comprehensive review' },
+    { title: 'Key Findings', desc: 'P0–P3 security issues' },
+    { title: 'Findings Explained', desc: 'Plain-language breakdown' },
+    { title: 'Business Impact', desc: '85% risk reduction' },
+    { title: 'Implementation Timeline', desc: '6-week path to production' },
     { title: 'Top Recommendations', desc: '5 strategic initiatives' },
+    { title: 'Tooling Ecosystem', desc: '80+ tools compared' },
     { title: 'Strategic Roadmap', desc: 'Enterprise maturity path' },
+    { title: 'Next Steps & Q&A', desc: 'Action items & open floor' },
   ];
 
   const containerVariants = {

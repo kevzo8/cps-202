@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code2, Database, Lock, Zap } from 'lucide-react';
+import { Code2, Database, Lock, Zap, Globe, Shield, Smartphone, FileText } from 'lucide-react';
 
 export default function ScopeSlide() {
   const scopeItems = [
@@ -35,6 +35,21 @@ export default function ScopeSlide() {
     },
   ];
 
+  const expandedSections = [
+    { icon: Shield, label: 'Frontend Security', color: 'text-cyan-500', bg: 'border-cyan-500/30' },
+    { icon: Globe, label: 'API Gateways', color: 'text-emerald-500', bg: 'border-emerald-500/30' },
+    { icon: Smartphone, label: 'Mobile Security', color: 'text-violet-500', bg: 'border-violet-500/30' },
+    { icon: Shield, label: 'Cloud Providers', color: 'text-sky-500', bg: 'border-sky-500/30' },
+    { icon: Database, label: 'Database Platforms', color: 'text-pink-500', bg: 'border-pink-500/30' },
+    { icon: Zap, label: 'Deployment Platforms', color: 'text-amber-500', bg: 'border-amber-500/30' },
+    { icon: Lock, label: 'Auth Platforms', color: 'text-rose-500', bg: 'border-rose-500/30' },
+    { icon: FileText, label: 'GDPR & Privacy', color: 'text-teal-500', bg: 'border-teal-500/30' },
+    { icon: Shield, label: 'GraphQL Security', color: 'text-indigo-500', bg: 'border-indigo-500/30' },
+    { icon: Globe, label: 'WebSocket Security', color: 'text-lime-500', bg: 'border-lime-500/30' },
+    { icon: Code2, label: 'LLM/AI Security', color: 'text-fuchsia-500', bg: 'border-fuchsia-500/30' },
+    { icon: Zap, label: 'Incident Response', color: 'text-orange-500', bg: 'border-orange-500/30' },
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,7 +68,7 @@ export default function ScopeSlide() {
 
   return (
     <div className="w-full h-screen bg-background flex flex-col items-center justify-center p-12">
-      <motion.div className="max-w-5xl w-full space-y-12">
+      <motion.div className="max-w-5xl w-full space-y-6">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,13 +77,13 @@ export default function ScopeSlide() {
         >
           <h1 className="text-5xl font-bold text-foreground">Assessment Scope</h1>
           <p className="text-lg text-muted-foreground">
-            Comprehensive review across infrastructure, security, and deployment
+            Comprehensive review across infrastructure, security, and deployment — <span className="font-bold text-primary">28 sections, spanning the full tech stack</span>
           </p>
           <div className="h-1 w-20 bg-primary rounded-full" />
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -79,18 +94,18 @@ export default function ScopeSlide() {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className="p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-all"
+                className="p-4 bg-card rounded-lg border border-border hover:border-primary/50 transition-all"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-3 rounded-lg ${scope.bgColor}`}>
-                    <IconComponent className={`${scope.color} w-6 h-6`} />
+                <div className="flex items-center gap-3 mb-3">
+                  <div className={`p-2 rounded-lg ${scope.bgColor}`}>
+                    <IconComponent className={`${scope.color} w-5 h-5`} />
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground">{scope.title}</h3>
+                  <h3 className="text-lg font-semibold text-foreground">{scope.title}</h3>
                 </div>
-                <ul className="space-y-2">
+                <ul className="space-y-1">
                   {scope.items.map((item, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -104,10 +119,31 @@ export default function ScopeSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
+          className="space-y-3"
+        >
+          <p className="text-sm font-semibold text-foreground text-center">
+            Plus 12 expanded domains —
+          </p>
+          <div className="flex flex-wrap gap-2 justify-center">
+            {expandedSections.map((s, i) => (
+              <span
+                key={i}
+                className={`px-3 py-1.5 text-xs font-medium rounded-full border ${s.bg} ${s.color} bg-card`}
+              >
+                {s.label}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1 }}
           className="p-4 bg-primary/10 border border-primary/30 rounded-lg text-center"
         >
           <p className="text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">8 Issues</span> identified across priority levels P0–P7
+            <span className="font-semibold text-foreground">8 Issues</span> identified across priority levels P0–P7 · <span className="font-semibold text-foreground">28 sections</span> of analysis · <span className="font-semibold text-foreground">80+ tools</span> compared
           </p>
         </motion.div>
       </motion.div>

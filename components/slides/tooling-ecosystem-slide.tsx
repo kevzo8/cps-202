@@ -6,68 +6,100 @@ import { Code2, GitBranch, Shield, Zap, Box, Eye } from 'lucide-react';
 export default function ToolingEcosystemSlide() {
   const categories = [
     {
-      title: 'AI-Powered App Builders',
+      title: 'AI-Assisted Development',
       icon: Code2,
       color: 'text-blue-600',
       bgColor: 'bg-blue-50 dark:bg-blue-950',
-      tools: ['v0 (React/Next.js)', 'Lovable (React+Supabase)', 'Base44 (Full-stack)', 'Claude Code', 'Cursor IDE'],
-      description: 'AI agents for rapid MVP and full-stack app development with security awareness',
+      tools: ['Opencode', 'CodeRabbit', 'Claude Code', 'Cursor', 'GitHub Copilot'],
+      description: 'Security-aware AI agents with local execution, multi-repo orchestration',
     },
     {
-      title: 'Design-to-Code Platforms',
-      icon: Box,
+      title: 'Auth & Identity Platforms',
+      icon: Shield,
       color: 'text-purple-600',
       bgColor: 'bg-purple-50 dark:bg-purple-950',
-      tools: ['Figma → Anima', 'Figma → Locofy', 'Webflow', 'Canva Code', 'FlutterFlow'],
-      description: 'Design handoff to production code (UI only — auth handled separately)',
+      tools: ['Keycloak', 'Auth0', 'Clerk', 'Zitadel', 'Logto'],
+      description: 'OIDC/OAuth2 providers, SSO, MFA, RBAC — 12 platforms compared',
     },
     {
-      title: 'Code Quality & Review',
-      icon: Shield,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50 dark:bg-green-950',
-      tools: ['SonarQube', 'CodeQL', 'Semgrep', 'Reviewdog', 'SonarLint'],
-      description: 'Static analysis, OWASP Top 10 detection, bug prevention',
-    },
-    {
-      title: 'Testing & Coverage',
-      icon: Zap,
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-50 dark:bg-orange-950',
-      tools: ['JUnit 5', 'Vitest', 'Playwright', 'Cypress', 'REST Assured'],
-      description: 'Unit, integration, E2E testing + coverage gating',
-    },
-    {
-      title: 'Security Scanning',
+      title: 'API Gateways & Security',
       icon: Shield,
       color: 'text-red-600',
       bgColor: 'bg-red-50 dark:bg-red-950',
-      tools: ['OWASP ZAP', 'Trivy', 'Snyk', 'Gitleaks', 'TruffleHog'],
-      description: 'DAST, container scanning, secret detection, dependency CVEs',
+      tools: ['Kong', 'APISIX', 'Tyk', 'AWS API Gateway', 'Spring Cloud Gateway'],
+      description: 'Centralized rate limiting, JWT validation, WAF before app layer',
     },
     {
-      title: 'CI/CD & Automation',
-      icon: GitBranch,
+      title: 'Cloud & Infrastructure',
+      icon: Eye,
       color: 'text-cyan-600',
       bgColor: 'bg-cyan-50 dark:bg-cyan-950',
-      tools: ['GitLab CI', 'Dagger', 'Earthly', 'ArgoCD', 'Flux'],
-      description: 'Pipeline automation, GitOps deployment, build optimization',
+      tools: ['Cloudflare (WAF+DDoS)', 'AWS/GCP/Azure', 'Docker', 'Kubernetes', 'Terraform'],
+      description: 'Zero Trust architecture, WAF, DDoS, IaC — 4 providers compared',
     },
     {
-      title: 'Infrastructure & Observability',
-      icon: Eye,
+      title: 'Database & Storage',
+      icon: Zap,
+      color: 'text-green-600',
+      bgColor: 'bg-green-50 dark:bg-green-950',
+      tools: ['Cassandra', 'PostgreSQL', 'Supabase', 'MongoDB', 'Firebase'],
+      description: '11 database platforms compared for auth, compliance, and scalability',
+    },
+    {
+      title: 'Deployment Platforms',
+      icon: Zap,
+      color: 'text-orange-600',
+      bgColor: 'bg-orange-50 dark:bg-orange-950',
+      tools: ['Vercel', 'Netlify', 'Render', 'Railway', 'Cloudflare Pages'],
+      description: 'Serverless, containers, and PaaS — backend + frontend comparisons',
+    },
+    {
+      title: 'Security Testing',
+      icon: Shield,
       color: 'text-pink-600',
       bgColor: 'bg-pink-50 dark:bg-pink-950',
-      tools: ['Terraform', 'Docker', 'Prometheus', 'Grafana', 'OpenTelemetry'],
-      description: 'IaC, containerization, monitoring, distributed tracing',
+      tools: ['OWASP ZAP', 'Trivy', 'Snyk', 'SonarQube', 'Burp Suite'],
+      description: 'SAST, DAST, dependency scanning, container image security',
     },
     {
-      title: 'Deployment & Hosting',
-      icon: Zap,
+      title: 'Observability & Monitoring',
+      icon: Eye,
       color: 'text-indigo-600',
       bgColor: 'bg-indigo-50 dark:bg-indigo-950',
-      tools: ['Vercel', 'Netlify', 'Render', 'Railway', 'Heroku'],
-      description: 'Serverless, containers, and platform-as-a-service deployments',
+      tools: ['Sentry', 'Prometheus', 'Grafana', 'Datadog', 'OpenTelemetry'],
+      description: 'Error tracking, metrics, logging, distributed tracing — MTTD < 5 min',
+    },
+    {
+      title: 'GraphQL & WebSocket Security',
+      icon: Code2,
+      color: 'text-teal-600',
+      bgColor: 'bg-teal-50 dark:bg-teal-950',
+      tools: ['DataLoader', 'Depth limiting', 'Origin validation', 'Per-message auth'],
+      description: 'Query cost analysis, CSWSH prevention, connection rate limiting',
+    },
+    {
+      title: 'LLM & AI Security',
+      icon: Code2,
+      color: 'text-fuchsia-600',
+      bgColor: 'bg-fuchsia-50 dark:bg-fuchsia-950',
+      tools: ['Guardrails AI', 'Rebuff', 'NeMo Guardrails', 'LangFuse', 'Garak'],
+      description: 'Prompt injection detection, RAG security, PII masking, red-teaming',
+    },
+    {
+      title: 'Mobile Security',
+      icon: Shield,
+      color: 'text-violet-600',
+      bgColor: 'bg-violet-50 dark:bg-violet-950',
+      tools: ['Certificate pinning', 'Keychain/Keystore', 'OIDC PKCE', 'Root detection'],
+      description: 'Mobile-specific auth patterns, biometric SSO, app attestation',
+    },
+    {
+      title: 'Privacy & Compliance',
+      icon: Zap,
+      color: 'text-rose-600',
+      bgColor: 'bg-rose-50 dark:bg-rose-950',
+      tools: ['GDPR', 'CCPA', 'Data retention (TTL)', 'SBOM', 'DPA contracts'],
+      description: 'Data mapping, consent management, breach notification plan',
     },
   ];
 
@@ -98,7 +130,7 @@ export default function ToolingEcosystemSlide() {
         >
           <h1 className="text-5xl font-bold text-foreground">Complete Tooling Ecosystem</h1>
           <p className="text-lg text-muted-foreground">
-            40+ tools across 6 critical categories — from development to production
+            <span className="font-bold text-primary">28 sections</span> · 12 categories · 80+ tools evaluated across the full SDLC
           </p>
           <div className="h-1 w-20 bg-primary rounded-full" />
         </motion.div>
@@ -150,7 +182,7 @@ export default function ToolingEcosystemSlide() {
           className="p-4 bg-primary/5 border border-primary/20 rounded-lg"
         >
           <p className="text-sm text-foreground">
-            <span className="font-semibold">Integrated Workflow:</span> AI app builders (v0, Lovable) scaffold MVPs in minutes. Design platforms (Figma→Anima, Webflow) handle UI handoff. CodeRabbit auto-reviews code. SonarQube gates quality. Tests verify security. OWASP ZAP + Trivy scan threats. GitLab CI deploys. Prometheus + Grafana monitor. Complete end-to-end security and DevOps coverage.
+            <span className="font-semibold">End-to-end coverage:</span> Every layer analyzed — from AI dev tools and auth platforms to cloud providers, API gateways, databases, deployment platforms, mobile security, LLM security, and GDPR compliance. All 28 sections documented with tool comparisons, security ratings, and cost analysis.
           </p>
         </motion.div>
       </motion.div>
