@@ -39,8 +39,8 @@ const recommendations: RecommendationCard[] = [
       'OWASP Top 10 violation detection',
       'Zero-cost local execution',
     ],
-    color: 'bg-blue-100',
-    accentColor: 'border-blue-300',
+    color: 'bg-blue-100 dark:bg-blue-950/60',
+    accentColor: 'border-blue-300 dark:border-blue-800',
   },
   {
     icon: <GitBranch className="w-8 h-8" />,
@@ -52,8 +52,8 @@ const recommendations: RecommendationCard[] = [
       'Automated deploy on merge',
       'Rollback capabilities in place',
     ],
-    color: 'bg-purple-100',
-    accentColor: 'border-purple-300',
+    color: 'bg-purple-100 dark:bg-purple-950/60',
+    accentColor: 'border-purple-300 dark:border-purple-800',
   },
   {
     icon: <Zap className="w-8 h-8" />,
@@ -65,8 +65,8 @@ const recommendations: RecommendationCard[] = [
       'Container image security scanning',
       'Deployment gates before production',
     ],
-    color: 'bg-amber-100',
-    accentColor: 'border-amber-300',
+    color: 'bg-amber-100 dark:bg-amber-950/60',
+    accentColor: 'border-amber-300 dark:border-amber-800',
   },
   {
     icon: <Shield className="w-8 h-8" />,
@@ -78,8 +78,8 @@ const recommendations: RecommendationCard[] = [
       'Enforce >80% test coverage',
       'SAST in every pipeline run',
     ],
-    color: 'bg-green-100',
-    accentColor: 'border-green-300',
+    color: 'bg-green-100 dark:bg-green-950/60',
+    accentColor: 'border-green-300 dark:border-green-800',
   },
   {
     icon: <BarChart3 className="w-8 h-8" />,
@@ -91,8 +91,8 @@ const recommendations: RecommendationCard[] = [
       'ELK stack for centralized logging',
       'OpenTelemetry for distributed tracing',
     ],
-    color: 'bg-rose-100',
-    accentColor: 'border-rose-300',
+    color: 'bg-rose-100 dark:bg-rose-950/60',
+    accentColor: 'border-rose-300 dark:border-rose-800',
   },
 ];
 
@@ -156,7 +156,7 @@ export default function TopRecommendationsSlide() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1 }}
-        className="mt-8 p-4 bg-primary/10 border border-primary/20 rounded-lg"
+        className="mt-8 p-4 bg-primary/10 dark:bg-primary/20 border border-primary/30 rounded-lg"
       >
         <p className="text-sm text-foreground font-semibold">
           💡 All recommendations are immediately actionable and integrate into existing GitLab workflows. Implementation phase: 6 weeks with zero operational disruption.

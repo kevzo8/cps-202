@@ -12,8 +12,8 @@ export default function FindingSlide() {
       impact: 'Token validation fails, authentication broken',
       status: 'FIXED',
       color: 'text-red-700',
-      bgColor: 'bg-red-50',
-      borderColor: 'border-red-200',
+      bgColor: 'bg-red-100 dark:bg-red-950/60',
+      borderColor: 'border-red-300 dark:border-red-800',
     },
     {
       priority: 'P1',
@@ -22,8 +22,8 @@ export default function FindingSlide() {
       impact: 'Unhandled exceptions leak stack traces to clients',
       status: 'FIXED',
       color: 'text-orange-700',
-      bgColor: 'bg-orange-50',
-      borderColor: 'border-orange-200',
+      bgColor: 'bg-orange-100 dark:bg-orange-950/60',
+      borderColor: 'border-orange-300 dark:border-orange-800',
     },
     {
       priority: 'P2',
@@ -32,8 +32,8 @@ export default function FindingSlide() {
       impact: 'Attackers can refresh tokens without valid credentials',
       status: 'FIXED',
       color: 'text-red-700',
-      bgColor: 'bg-red-50',
-      borderColor: 'border-red-200',
+      bgColor: 'bg-red-100 dark:bg-red-950/60',
+      borderColor: 'border-red-300 dark:border-red-800',
     },
     {
       priority: 'P3',
@@ -42,8 +42,8 @@ export default function FindingSlide() {
       impact: 'Secrets accessible via XSS attacks',
       status: 'CONDITIONAL',
       color: 'text-orange-700',
-      bgColor: 'bg-orange-50',
-      borderColor: 'border-orange-200',
+      bgColor: 'bg-orange-100 dark:bg-orange-950/60',
+      borderColor: 'border-orange-300 dark:border-orange-800',
     },
   ];
 
@@ -130,10 +130,10 @@ export default function FindingSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex items-center gap-3 p-4 bg-green-50 border border-green-200 rounded-lg"
+          className="flex items-center gap-3 p-4 bg-green-100 dark:bg-green-950/60 border border-green-300 dark:border-green-800 rounded-lg"
         >
-          <Zap className="text-green-600 flex-shrink-0" size={20} />
-          <p className="text-sm text-green-800">
+          <Zap className="text-green-600 dark:text-green-400 flex-shrink-0" size={20} />
+          <p className="text-sm text-green-800 dark:text-green-200">
             <span className="font-semibold">Status:</span> 7 of 8 issues resolved. 1 conditional fix pending architecture review.
           </p>
         </motion.div>

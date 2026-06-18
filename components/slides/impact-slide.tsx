@@ -10,36 +10,36 @@ export default function ImpactSlide() {
       title: 'Security Risk',
       before: 'CRITICAL — Token validation failures could allow unauthorized access',
       after: 'MITIGATED — All auth flows secured and validated',
-      color: 'text-red-700',
-      bgColor: 'bg-red-50',
-      borderColor: 'border-red-200',
+      color: 'text-red-700 dark:text-red-300',
+      bgColor: 'bg-red-100 dark:bg-red-950/60',
+      borderColor: 'border-red-300 dark:border-red-800',
     },
     {
       icon: Shield,
       title: 'Data Protection',
       before: 'Client secrets exposed to XSS attacks',
       after: 'Secrets managed server-side with httpOnly cookies',
-      color: 'text-blue-700',
-      bgColor: 'bg-blue-50',
-      borderColor: 'border-blue-200',
+      color: 'text-blue-700 dark:text-blue-300',
+      bgColor: 'bg-blue-100 dark:bg-blue-950/60',
+      borderColor: 'border-blue-300 dark:border-blue-800',
     },
     {
       icon: TrendingDown,
       title: 'Operational Risk',
       before: 'Unhandled exceptions causing service instability',
       after: 'Global error handling with consistent responses',
-      color: 'text-orange-700',
-      bgColor: 'bg-orange-50',
-      borderColor: 'border-orange-200',
+      color: 'text-orange-700 dark:text-orange-300',
+      bgColor: 'bg-orange-100 dark:bg-orange-950/60',
+      borderColor: 'border-orange-300 dark:border-orange-800',
     },
     {
       icon: TrendingUp,
       title: 'Compliance',
       before: 'Audit logs missing, rate limiting disabled',
       after: 'Full audit trail + DDoS protection implemented',
-      color: 'text-green-700',
-      bgColor: 'bg-green-50',
-      borderColor: 'border-green-200',
+      color: 'text-green-700 dark:text-green-300',
+      bgColor: 'bg-green-100 dark:bg-green-950/60',
+      borderColor: 'border-green-300 dark:border-green-800',
     },
   ];
 
@@ -104,7 +104,7 @@ export default function ImpactSlide() {
                     </p>
                   </div>
                   
-                  <div className="w-full h-px bg-gray-300" />
+                  <div className="w-full h-px bg-border" />
                   
                   <div className="flex gap-3">
                     <div className="text-xs font-bold text-white bg-green-700 px-2 py-1 rounded whitespace-nowrap">
@@ -124,10 +124,10 @@ export default function ImpactSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="p-6 bg-gradient-to-r from-green-100 to-blue-100 border border-green-300 rounded-lg"
+          className="p-6 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-950/60 dark:to-blue-950/60 border border-green-300 dark:border-green-800 rounded-lg"
         >
           <h4 className="font-semibold text-foreground mb-2">Overall Risk Reduction</h4>
-          <div className="w-full bg-gray-200 rounded-full h-3">
+          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
             <motion.div
               className="bg-gradient-to-r from-green-500 to-emerald-500 h-3 rounded-full"
               initial={{ width: 0 }}
@@ -136,7 +136,7 @@ export default function ImpactSlide() {
             />
           </div>
           <p className="text-sm text-muted-foreground mt-2">
-            <span className="font-semibold text-green-700">85% risk reduction</span> — Ready for production deployment
+            <span className="font-semibold text-green-700 dark:text-green-400">85% risk reduction</span> — Ready for production deployment
           </p>
         </motion.div>
       </motion.div>
