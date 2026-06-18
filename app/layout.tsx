@@ -12,23 +12,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'CPS-202 SPIKE: Security & Integration Review',
   description: 'Executive presentation on RBAC security assessment and SSO feasibility for Software Ventures International',
-  generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/svi_logo.png',
+    apple: '/svi_logo.png',
   },
 }
 

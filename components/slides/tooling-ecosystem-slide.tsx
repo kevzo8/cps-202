@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code2, GitBranch, Shield, Zap, Box, Eye } from 'lucide-react';
+import { Code2, GitBranch, Shield, Zap, Box, Eye, ClipboardList } from 'lucide-react';
 
 export default function ToolingEcosystemSlide() {
   const categories = [
@@ -58,8 +58,8 @@ export default function ToolingEcosystemSlide() {
       icon: Shield,
       color: 'text-pink-600',
       bgColor: 'bg-pink-50 dark:bg-pink-950',
-      tools: ['OWASP ZAP', 'Trivy', 'Snyk', 'SonarQube', 'Burp Suite'],
-      description: 'SAST, DAST, dependency scanning, container image security',
+      tools: ['OWASP ZAP', 'Trivy', 'Snyk', 'SonarQube', 'Burp Suite', 'DataLoader', 'Depth limiting'],
+      description: 'SAST, DAST, dependency scanning, container security, GraphQL/WebSocket testing',
     },
     {
       title: 'Observability & Monitoring',
@@ -70,12 +70,12 @@ export default function ToolingEcosystemSlide() {
       description: 'Error tracking, metrics, logging, distributed tracing — MTTD < 5 min',
     },
     {
-      title: 'GraphQL & WebSocket Security',
-      icon: Code2,
-      color: 'text-teal-600',
-      bgColor: 'bg-teal-50 dark:bg-teal-950',
-      tools: ['DataLoader', 'Depth limiting', 'Origin validation', 'Per-message auth'],
-      description: 'Query cost analysis, CSWSH prevention, connection rate limiting',
+      title: 'Process & Collaboration',
+      icon: ClipboardList,
+      color: 'text-amber-600',
+      bgColor: 'bg-amber-50 dark:bg-amber-950',
+      tools: ['Miro', 'Excalidraw', 'Slack', 'Trello', 'Asana', 'Monday', 'Retroboard'],
+      description: 'Project management, sprint retro, diagramming, team communication',
     },
     {
       title: 'LLM & AI Security',
@@ -99,7 +99,7 @@ export default function ToolingEcosystemSlide() {
       color: 'text-rose-600',
       bgColor: 'bg-rose-50 dark:bg-rose-950',
       tools: ['GDPR', 'CCPA', 'Data retention (TTL)', 'SBOM', 'DPA contracts'],
-      description: 'Data mapping, consent management, breach notification plan',
+      description: 'Data mapping, consent management, breach notification — PH jurisdiction consideration for international GDPR applicability',
     },
   ];
 
@@ -120,23 +120,23 @@ export default function ToolingEcosystemSlide() {
   };
 
   return (
-    <div className="w-full h-screen bg-background flex flex-col items-center justify-center p-8">
-      <motion.div className="max-w-7xl w-full space-y-6">
+    <div className="w-full h-screen bg-background flex flex-col items-center justify-center px-8 py-6 pb-32">
+      <motion.div className="max-w-7xl w-full h-full flex flex-col">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="space-y-2"
+          className="space-y-1 mb-3 flex-shrink-0"
         >
-          <h1 className="text-5xl font-bold text-foreground">Complete Tooling Ecosystem</h1>
-          <p className="text-lg text-muted-foreground">
-            <span className="font-bold text-primary">28 sections</span> · 12 categories · 80+ tools evaluated across the full SDLC
+          <h1 className="text-4xl font-bold text-foreground">Complete Tooling Ecosystem</h1>
+          <p className="text-base text-muted-foreground">
+            12 categories · 80+ tools evaluated across the full SDLC
           </p>
-          <div className="h-1 w-20 bg-primary rounded-full" />
+          <div className="h-0.5 w-16 bg-primary rounded-full" />
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[calc(100vh-220px)] overflow-y-auto pr-4"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 flex-1"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -147,23 +147,22 @@ export default function ToolingEcosystemSlide() {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className={`p-5 rounded-lg border border-border ${category.bgColor} hover:border-primary/50 transition-all`}
+                className={`p-4 rounded-lg border border-border ${category.bgColor} hover:border-primary/50 transition-all flex flex-col`}
               >
-                <div className="flex items-start gap-3 mb-3">
-                  <IconComponent size={24} className={`${category.color} flex-shrink-0`} />
+                <div className="flex items-start gap-2.5 mb-2 flex-shrink-0">
+                  <IconComponent size={20} className={`${category.color} flex-shrink-0 mt-0.5`} />
                   <div className="flex-1">
                     <h3 className="font-bold text-foreground text-base">{category.title}</h3>
-                    <p className="text-xs text-muted-foreground mt-1">{category.description}</p>
+                    <p className="text-xs text-muted-foreground mt-0.5 leading-snug">{category.description}</p>
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <p className="text-xs font-semibold text-muted-foreground">Tools:</p>
-                  <div className="flex flex-wrap gap-2">
+                <div className="flex-1">
+                  <div className="flex flex-wrap gap-1.5">
                     {category.tools.map((tool, i) => (
                       <span
                         key={i}
-                        className="px-2 py-1 text-xs bg-card border border-border rounded text-foreground font-medium"
+                        className="px-2 py-0.5 text-xs bg-card border border-border rounded text-foreground font-medium"
                       >
                         {tool}
                       </span>
@@ -176,13 +175,18 @@ export default function ToolingEcosystemSlide() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="p-4 bg-primary/5 border border-primary/20 rounded-lg"
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="flex-shrink-0 mt-4"
         >
-          <p className="text-sm text-foreground">
-            <span className="font-semibold">End-to-end coverage:</span> Every layer analyzed — from AI dev tools and auth platforms to cloud providers, API gateways, databases, deployment platforms, mobile security, LLM security, and GDPR compliance. All 28 sections documented with tool comparisons, security ratings, and cost analysis.
+          <div className="py-1.5 px-3 bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-lg text-center">
+            <p className="text-xs text-muted-foreground">
+              <span className="font-semibold text-foreground">End-to-end coverage:</span> Every layer analyzed — AI dev, auth, cloud, API gateways, databases, deployment, mobile, LLM security, and compliance. All categories with tool comparisons, ratings, and cost analysis.
+            </p>
+          </div>
+          <p className="text-[10px] text-center text-muted-foreground/50 mt-0.5">
+            <a href="https://svi-jira.atlassian.net/wiki/spaces/~71202071852762867849479b4d350bd48b7534/pages/245956628/Summary+Security+Assessment+Strategic+Improvements+for+RBAC+Beyond" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">Summary: Security Assessment &amp; Strategic Improvements for RBAC &amp; Beyond</a>
           </p>
         </motion.div>
       </motion.div>

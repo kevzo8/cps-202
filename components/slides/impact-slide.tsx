@@ -136,9 +136,13 @@ export default function ImpactSlide() {
             />
           </div>
           <p className="text-sm text-muted-foreground mt-2">
-            <span className="font-semibold text-green-700 dark:text-green-400">85% risk reduction</span> — Ready for production deployment
+            <span className="font-semibold text-green-700 dark:text-green-400">85% risk reduction</span> — 7 of 8 findings fixed. P3 (browser secrets) needs OIDC PKCE migration for full resolution. Ready for production deployment.
           </p>
         </motion.div>
+
+        <div className="text-[10px] text-center text-muted-foreground/50">
+          <a href="https://svi-jira.atlassian.net/wiki/spaces/~71202071852762867849479b4d350bd48b7534/pages/239140937/Phase+3+Technical+Assessment+for+Security+Integration+Review+of+Initial+RBAC+Release+and+SSO+Feasibility" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">Phase 3: Technical Assessment</a>
+        </div>
       </motion.div>
     </div>
   );

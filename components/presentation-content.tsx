@@ -10,7 +10,6 @@ import TitleSlide from './slides/title-slide';
 import AgendaSlide from './slides/agenda-slide';
 import ScopeSlide from './slides/scope-slide';
 import FindingSlide from './slides/finding-slide';
-import FindingsDetailedSlide from './slides/findings-detailed-slide';
 import ImpactSlide from './slides/impact-slide';
 import TimelineSlide from './slides/timeline-slide';
 import TopRecommendationsSlide from './slides/top-recommendations-slide';
@@ -23,26 +22,24 @@ const slides = [
   { id: 1, component: AgendaSlide, title: 'Agenda' },
   { id: 2, component: ScopeSlide, title: 'Assessment Scope' },
   { id: 3, component: FindingSlide, title: 'Key Findings' },
-  { id: 4, component: FindingsDetailedSlide, title: 'Security Findings Explained' },
-  { id: 5, component: ImpactSlide, title: 'Business Impact' },
-  { id: 6, component: TimelineSlide, title: 'Implementation Timeline' },
-  { id: 7, component: TopRecommendationsSlide, title: 'Top Recommendations' },
-  { id: 8, component: ToolingEcosystemSlide, title: 'Complete Tooling Ecosystem' },
-  { id: 9, component: RecommendationSlide, title: 'Strategic Roadmap' },
-  { id: 10, component: NextStepsSlide, title: 'Next Steps & Q&A' },
+  { id: 4, component: ImpactSlide, title: 'Business Impact' },
+  { id: 5, component: TimelineSlide, title: 'Implementation Timeline' },
+  { id: 6, component: TopRecommendationsSlide, title: 'Top Recommendations' },
+  { id: 7, component: ToolingEcosystemSlide, title: 'Complete Tooling Ecosystem' },
+  { id: 8, component: RecommendationSlide, title: 'Strategic Roadmap' },
+  { id: 9, component: NextStepsSlide, title: 'Next Steps & Q&A' },
 ];
 
 export default function PresentationContent() {
   const { theme, toggleTheme } = useTheme();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const goToSlide = useCallback((idx: number) => {
     const dir = idx > currentSlide ? 1 : -1;
     setDirection(dir);
     setCurrentSlide(idx);
-    setSidebarOpen(false);
   }, [currentSlide]);
 
   const handleNextSlide = useCallback(() => {

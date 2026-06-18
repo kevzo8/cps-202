@@ -235,9 +235,8 @@ pnpm dev
 ```
 
 ### Production Deployment
-1. Connect to GitHub repository (v0 project settings)
-2. Click **Publish** button to deploy to Vercel
-3. Share deployed URL with stakeholders
+1. Push to `main` branch — Vercel auto-deploys
+2. Share deployed URL with stakeholders
 4. Present directly from deployed URL for reliability
 
 ---

@@ -182,17 +182,16 @@ A **world-class, 10-slide executive presentation** for Software Ventures Interna
 
 ### Option 1: Local Presentation (Fast)
 ```bash
-cd /vercel/share/v0-project
+cd cps-202
 pnpm dev
 # Open http://localhost:3000 in browser
 # Full-screen (F11) for projector
 ```
 
 ### Option 2: Deploy to Vercel (Shareable Link)
-1. Click **Publish** button in v0 top-right
-2. Get live URL: `https://your-project.vercel.app`
-3. Share with stakeholders for async review
-4. Present directly from deployed URL for reliability
+1. Open the project in your IDE (VS Code / Cursor)
+2. Run `pnpm dev` to start the dev server
+3. Share the deployed Vercel URL with stakeholders for async review
 
 ### Option 3: Export as PDF (Slides Only)
 - Print Slide 8 separately for detailed distribution
@@ -285,7 +284,7 @@ If you need:
 - **Slide customization** — Edit components in `components/slides/`
 - **Color/design changes** — Update `globals.css` theme variables
 - **New metrics/data** — Replace hardcoded values in slide components
-- **Deployment help** — Use v0's "Publish" button or deploy via Vercel CLI
+- **Deployment help** — Deploy via Vercel CLI (`vercel --prod`) or connect GitHub repo
 
 ---
 

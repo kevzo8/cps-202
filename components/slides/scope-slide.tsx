@@ -67,8 +67,8 @@ export default function ScopeSlide() {
   };
 
   return (
-    <div className="w-full h-screen bg-background flex flex-col items-center justify-center p-12">
-      <motion.div className="max-w-5xl w-full space-y-6">
+    <div className="w-full h-screen bg-background flex flex-col items-center justify-center p-12 pb-20">
+      <motion.div className="max-w-5xl w-full space-y-4">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -77,9 +77,26 @@ export default function ScopeSlide() {
         >
           <h1 className="text-5xl font-bold text-foreground">Assessment Scope</h1>
           <p className="text-lg text-muted-foreground">
-            Comprehensive review across infrastructure, security, and deployment — <span className="font-bold text-primary">28 sections, spanning the full tech stack</span>
+            Three repositories assessed — backend, portal, and admin panel
           </p>
           <div className="h-1 w-20 bg-primary rounded-full" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="flex flex-wrap gap-2 justify-center -mt-2 mb-2"
+        >
+          <span className="px-3 py-1 text-xs font-mono font-medium rounded-full bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+            svi-authentication-springboot-kyc
+          </span>
+          <span className="px-3 py-1 text-xs font-mono font-medium rounded-full bg-green-100 dark:bg-green-950/60 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800">
+            svi-authenticationportal-react-kyc
+          </span>
+          <span className="px-3 py-1 text-xs font-mono font-medium rounded-full bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+            svi-sso-admin-panel-javascript-kyc
+          </span>
         </motion.div>
 
         <motion.div
@@ -122,7 +139,7 @@ export default function ScopeSlide() {
           className="space-y-3"
         >
           <p className="text-sm font-semibold text-foreground text-center">
-            Plus 12 expanded domains —
+             Comprehensive coverage across the full tech stack —
           </p>
           <div className="flex flex-wrap gap-2 justify-center">
             {expandedSections.map((s, i) => (
@@ -143,9 +160,13 @@ export default function ScopeSlide() {
           className="p-4 bg-primary/10 border border-primary/30 rounded-lg text-center"
         >
           <p className="text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">8 Issues</span> identified across priority levels P0–P7 · <span className="font-semibold text-foreground">28 sections</span> of analysis · <span className="font-semibold text-foreground">80+ tools</span> compared
+            <span className="font-semibold text-foreground">8 Issues</span> identified across priority levels P0–P7 · <span className="font-semibold text-foreground">80+ tools</span> compared
           </p>
         </motion.div>
+
+        <div className="text-[10px] text-center text-muted-foreground/50">
+          <a href="https://svi-jira.atlassian.net/wiki/spaces/~71202071852762867849479b4d350bd48b7534/pages/237502679/Phase+1+Engineering+Process+and+Software+Delivery+Foundations+-+A+Preliminary+Assessment+for+Initial+RBAC+Release+and+SSO+Feasibility" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">Phase 1: Engineering Process & Software Delivery Foundations</a>
+        </div>
       </motion.div>
     </div>
   );

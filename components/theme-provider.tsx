@@ -12,32 +12,28 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('dark');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    const applyTheme = (t: Theme) => {
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(t);
+    };
+
     setMounted(true);
     const stored = localStorage.getItem('theme') as Theme | null;
-    const initial = stored || 'light';
+    const initial = stored || 'dark';
     setTheme(initial);
-    
-    if (initial === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    applyTheme(initial);
   }, []);
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-    
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(newTheme);
   };
 
   if (!mounted) return <>{children}</>;

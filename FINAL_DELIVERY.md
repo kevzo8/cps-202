@@ -140,7 +140,7 @@ app/
 
 ### Local Presentation
 ```bash
-cd /vercel/share/v0-project
+cd cps-202
 pnpm dev
 # Navigate to http://localhost:3000
 # Press F11 for full-screen
@@ -149,7 +149,7 @@ pnpm dev
 ```
 
 ### Live Deployment
-1. Click "Publish" in v0 top-right
+1. Run `vercel --prod` or push to GitHub (auto-deploys)
 2. Share live URL with stakeholders
 3. Present directly from deployed URL
 
@@ -202,9 +202,9 @@ pnpm dev
 ## Next Steps
 
 1. **Download & Deploy**
-   - Use shadcn CLI to install: `npx shadcn-ui@latest init`
-   - Or click "Download ZIP" in v0
-   - Deploy to Vercel with one click
+   - Clone the repo: `git clone https://github.com/kevzo8/cps-202.git`
+   - Run `pnpm install && pnpm dev`
+   - Deploy to Vercel with `vercel --prod`
 
 2. **Customize (Optional)**
    - Update company logo/colors in design tokens (globals.css)
