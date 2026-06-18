@@ -11,8 +11,9 @@ export default function FindingSlide() {
       severity: 'CRITICAL',
       impact: 'Token validation fails, authentication broken',
       status: 'FIXED',
-      color: 'text-red-600',
+      color: 'text-red-700',
       bgColor: 'bg-red-50',
+      borderColor: 'border-red-200',
     },
     {
       priority: 'P1',
@@ -20,8 +21,9 @@ export default function FindingSlide() {
       severity: 'MEDIUM',
       impact: 'Unhandled exceptions leak stack traces to clients',
       status: 'FIXED',
-      color: 'text-orange-600',
+      color: 'text-orange-700',
       bgColor: 'bg-orange-50',
+      borderColor: 'border-orange-200',
     },
     {
       priority: 'P2',
@@ -29,8 +31,9 @@ export default function FindingSlide() {
       severity: 'HIGH',
       impact: 'Attackers can refresh tokens without valid credentials',
       status: 'FIXED',
-      color: 'text-red-600',
+      color: 'text-red-700',
       bgColor: 'bg-red-50',
+      borderColor: 'border-red-200',
     },
     {
       priority: 'P3',
@@ -38,8 +41,9 @@ export default function FindingSlide() {
       severity: 'HIGH',
       impact: 'Secrets accessible via XSS attacks',
       status: 'CONDITIONAL',
-      color: 'text-orange-600',
+      color: 'text-orange-700',
       bgColor: 'bg-orange-50',
+      borderColor: 'border-orange-200',
     },
   ];
 
@@ -89,25 +93,25 @@ export default function FindingSlide() {
             const IconComponent = getSeverityIcon(finding.severity);
             return (
               <motion.div key={idx} variants={itemVariants} className="group">
-                <div className={`p-5 rounded-lg border-2 border-transparent hover:border-primary/50 transition-all ${finding.bgColor}`}>
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-white">
-                        <IconComponent className={`${finding.color} w-6 h-6`} />
+                  <div className={`p-5 rounded-lg border-2 ${finding.borderColor} hover:border-primary/50 transition-all ${finding.bgColor}`}>
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-white shadow-sm">
+                          <IconComponent className={`${finding.color} w-6 h-6`} />
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${finding.color} bg-white`}>
-                          {finding.priority}
-                        </span>
-                        <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${finding.severity === 'CRITICAL' ? 'text-red-700 bg-red-100' : 'text-orange-700 bg-orange-100'}`}>
-                          {finding.severity}
-                        </span>
-                        <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-green-700 bg-green-100">
-                          {finding.status}
-                        </span>
-                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold text-white ${finding.severity === 'CRITICAL' ? 'bg-red-600' : finding.severity === 'HIGH' ? 'bg-orange-600' : 'bg-yellow-600'}`}>
+                            {finding.priority}
+                          </span>
+                          <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold text-white ${finding.severity === 'CRITICAL' ? 'bg-red-700' : 'bg-orange-700'}`}>
+                            {finding.severity}
+                          </span>
+                          <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-white bg-green-700">
+                            {finding.status}
+                          </span>
+                        </div>
                       <h3 className="text-lg font-semibold text-foreground mb-1">
                         {finding.title}
                       </h3>

@@ -10,32 +10,36 @@ export default function ImpactSlide() {
       title: 'Security Risk',
       before: 'CRITICAL — Token validation failures could allow unauthorized access',
       after: 'MITIGATED — All auth flows secured and validated',
-      color: 'text-red-600',
+      color: 'text-red-700',
       bgColor: 'bg-red-50',
+      borderColor: 'border-red-200',
     },
     {
       icon: Shield,
       title: 'Data Protection',
       before: 'Client secrets exposed to XSS attacks',
       after: 'Secrets managed server-side with httpOnly cookies',
-      color: 'text-blue-600',
+      color: 'text-blue-700',
       bgColor: 'bg-blue-50',
+      borderColor: 'border-blue-200',
     },
     {
       icon: TrendingDown,
       title: 'Operational Risk',
       before: 'Unhandled exceptions causing service instability',
       after: 'Global error handling with consistent responses',
-      color: 'text-orange-600',
+      color: 'text-orange-700',
       bgColor: 'bg-orange-50',
+      borderColor: 'border-orange-200',
     },
     {
       icon: TrendingUp,
       title: 'Compliance',
       before: 'Audit logs missing, rate limiting disabled',
       after: 'Full audit trail + DDoS protection implemented',
-      color: 'text-green-600',
+      color: 'text-green-700',
       bgColor: 'bg-green-50',
+      borderColor: 'border-green-200',
     },
   ];
 
@@ -83,7 +87,7 @@ export default function ImpactSlide() {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className={`p-6 rounded-lg border-2 border-transparent hover:border-primary/50 transition-all ${impact.bgColor}`}
+                className={`p-6 rounded-lg border-2 ${impact.borderColor} hover:border-primary/50 transition-all ${impact.bgColor}`}
               >
                 <div className="flex items-center gap-3 mb-4">
                   <IconComponent className={`${impact.color} w-6 h-6`} />
@@ -92,7 +96,7 @@ export default function ImpactSlide() {
                 
                 <div className="space-y-4">
                   <div className="flex gap-3">
-                    <div className="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded">
+                    <div className="text-xs font-bold text-white bg-red-700 px-2 py-1 rounded">
                       BEFORE
                     </div>
                     <p className="text-sm text-muted-foreground flex-1">
@@ -103,7 +107,7 @@ export default function ImpactSlide() {
                   <div className="w-full h-px bg-gray-300" />
                   
                   <div className="flex gap-3">
-                    <div className="text-xs font-bold text-green-600 bg-green-100 px-2 py-1 rounded whitespace-nowrap">
+                    <div className="text-xs font-bold text-white bg-green-700 px-2 py-1 rounded whitespace-nowrap">
                       AFTER
                     </div>
                     <p className="text-sm text-muted-foreground flex-1">
@@ -120,7 +124,7 @@ export default function ImpactSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="p-6 bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg"
+          className="p-6 bg-gradient-to-r from-green-100 to-blue-100 border border-green-300 rounded-lg"
         >
           <h4 className="font-semibold text-foreground mb-2">Overall Risk Reduction</h4>
           <div className="w-full bg-gray-200 rounded-full h-3">

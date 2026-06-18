@@ -39,8 +39,8 @@ const recommendations: RecommendationCard[] = [
       'OWASP Top 10 violation detection',
       'Zero-cost local execution',
     ],
-    color: 'bg-blue-50',
-    accentColor: 'border-blue-200',
+    color: 'bg-blue-100',
+    accentColor: 'border-blue-300',
   },
   {
     icon: <GitBranch className="w-8 h-8" />,
@@ -52,8 +52,8 @@ const recommendations: RecommendationCard[] = [
       'Automated deploy on merge',
       'Rollback capabilities in place',
     ],
-    color: 'bg-purple-50',
-    accentColor: 'border-purple-200',
+    color: 'bg-purple-100',
+    accentColor: 'border-purple-300',
   },
   {
     icon: <Zap className="w-8 h-8" />,
@@ -65,8 +65,8 @@ const recommendations: RecommendationCard[] = [
       'Container image security scanning',
       'Deployment gates before production',
     ],
-    color: 'bg-amber-50',
-    accentColor: 'border-amber-200',
+    color: 'bg-amber-100',
+    accentColor: 'border-amber-300',
   },
   {
     icon: <Shield className="w-8 h-8" />,
@@ -78,8 +78,8 @@ const recommendations: RecommendationCard[] = [
       'Enforce >80% test coverage',
       'SAST in every pipeline run',
     ],
-    color: 'bg-green-50',
-    accentColor: 'border-green-200',
+    color: 'bg-green-100',
+    accentColor: 'border-green-300',
   },
   {
     icon: <BarChart3 className="w-8 h-8" />,
@@ -91,8 +91,8 @@ const recommendations: RecommendationCard[] = [
       'ELK stack for centralized logging',
       'OpenTelemetry for distributed tracing',
     ],
-    color: 'bg-rose-50',
-    accentColor: 'border-rose-200',
+    color: 'bg-rose-100',
+    accentColor: 'border-rose-300',
   },
 ];
 

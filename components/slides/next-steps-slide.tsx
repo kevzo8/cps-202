@@ -110,23 +110,23 @@ export default function NextStepsSlide() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8"
         >
-          <div className="p-5 bg-green-50 border border-green-200 rounded-lg">
-            <CheckCircle2 className="text-green-600 mb-3" size={24} />
+          <div className="p-5 bg-green-100 border border-green-300 rounded-lg">
+            <CheckCircle2 className="text-green-700 mb-3" size={24} />
             <h4 className="font-semibold text-foreground mb-2">Ready</h4>
             <p className="text-sm text-muted-foreground">
               Code is tested and production-ready
             </p>
           </div>
 
-          <div className="p-5 bg-blue-50 border border-blue-200 rounded-lg">
-            <MessageCircle className="text-blue-600 mb-3" size={24} />
+          <div className="p-5 bg-blue-100 border border-blue-300 rounded-lg">
+            <MessageCircle className="text-blue-700 mb-3" size={24} />
             <h4 className="font-semibold text-foreground mb-2">Support</h4>
             <p className="text-sm text-muted-foreground">
               Full technical support during deployment
             </p>
           </div>
 
-          <div className="p-5 bg-purple-50 border border-purple-200 rounded-lg">
+          <div className="p-5 bg-purple-100 border border-purple-300 rounded-lg">
             <ArrowRight className="text-purple-600 mb-3" size={24} />
             <h4 className="font-semibold text-foreground mb-2">Questions?</h4>
             <p className="text-sm text-muted-foreground">
