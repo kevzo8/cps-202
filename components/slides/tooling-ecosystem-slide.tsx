@@ -80,8 +80,8 @@ export default function ToolingEcosystemSlide() {
       icon: ClipboardList,
       color: 'text-amber-600',
       bgColor: 'bg-amber-50 dark:bg-amber-950',
-      tools: ['Miro', 'Excalidraw', 'Slack', 'Trello', 'Asana', 'Monday', 'Retroboard'],
-      description: 'Project management, sprint retro, diagramming, team communication',
+      tools: ['Miro', 'Excalidraw', 'Slack', 'Trello', 'Asana', 'Monday', 'Retroboard', 'n8n'],
+      description: 'Project management, sprint retro, diagramming, automation, team communication',
     },
     {
       title: 'LLM & AI Security',

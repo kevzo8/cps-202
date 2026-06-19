@@ -61,7 +61,6 @@ export default function RecommendationSlide() {
         'PH-based team — GDPR as reference framework, not strict mandate',
         'SBOM generation for supply chain compliance',
         'DPA verification with all third-party processors',
-        'DPA verification with all third-party processors',
       ],
       color: 'text-teal-600',
       bgColor: 'bg-teal-50 dark:bg-teal-950',

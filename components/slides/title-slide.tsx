@@ -59,7 +59,7 @@ export default function TitleSlide() {
             Software Ventures International
           </h2>
           <p className="text-sm text-muted-foreground mt-1">
-            by <span className="font-semibold text-foreground">KGV</span>
+            by <span className="font-semibold text-foreground">Kevin G. Vega</span>
           </p>
           <p className="text-sm text-muted-foreground mb-2">
             Sprint 4 Demo & Review • June 2026
