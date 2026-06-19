@@ -120,7 +120,7 @@ export default function NextStepsSlide() {
               Ready to secure our systems and launch with confidence
             </p>
             <p className="text-xs text-muted-foreground/70 mb-3">
-              Presented by <span className="font-semibold text-foreground">Kevin G. Vega</span>
+              Presented by <span className="font-semibold text-foreground">KGV</span>
             </p>
             <div className="flex gap-2 justify-center flex-wrap text-[11px] font-semibold">
               <span className="px-3 py-1 bg-primary text-primary-foreground rounded-full">Security ✓</span>

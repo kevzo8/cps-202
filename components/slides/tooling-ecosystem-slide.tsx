@@ -12,6 +12,12 @@ export default function ToolingEcosystemSlide() {
       bgColor: 'bg-blue-50 dark:bg-blue-950',
       tools: ['Opencode', 'CodeRabbit', 'Claude Code', 'Cursor', 'GitHub Copilot'],
       description: 'Security-aware AI agents with local execution, multi-repo orchestration',
+      demo: (
+        <div className="flex flex-wrap gap-1.5 mt-1.5 pt-1.5 border-t border-blue-200/50 dark:border-blue-800/50">
+          <a href="https://screenrec.com/share/OmirAGM4gw" target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-600 dark:text-blue-400 hover:underline">▶ Opencode: Init</a>
+          <a href="https://screenrec.com/share/MpN5GUY1zw" target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-600 dark:text-blue-400 hover:underline">▶ Opencode: Install &amp; Results</a>
+        </div>
+      ),
     },
     {
       title: 'Auth & Identity Platforms',
@@ -168,6 +174,7 @@ export default function ToolingEcosystemSlide() {
                       </span>
                     ))}
                   </div>
+                  {category.demo}
                 </div>
               </motion.div>
             );
