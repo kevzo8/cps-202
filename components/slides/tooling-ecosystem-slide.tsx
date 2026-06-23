@@ -10,7 +10,7 @@ export default function ToolingEcosystemSlide() {
       icon: Code2,
       color: 'text-blue-600',
       bgColor: 'bg-blue-50 dark:bg-blue-950',
-      tools: ['Opencode', 'CodeRabbit', 'Claude Code', 'Cursor', 'GitHub Copilot'],
+      tools: ['Opencode', 'CodeRabbit', 'Claude Code', 'Cursor', 'GitHub Copilot', 'Continue.dev'],
       description: 'Security-aware AI agents with local execution, multi-repo orchestration',
       demo: (
         <div className="flex flex-wrap gap-1.5 mt-1.5 pt-1.5 border-t border-blue-200/50 dark:border-blue-800/50">
@@ -40,7 +40,7 @@ export default function ToolingEcosystemSlide() {
       icon: Eye,
       color: 'text-cyan-600',
       bgColor: 'bg-cyan-50 dark:bg-cyan-950',
-      tools: ['Cloudflare (WAF+DDoS)', 'AWS/GCP/Azure', 'Docker', 'Kubernetes', 'Terraform'],
+      tools: ['Cloudflare (WAF+DDoS)', 'AWS/GCP/Azure', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions'],
       description: 'Zero Trust architecture, WAF, DDoS, IaC — 4 providers compared',
     },
     {
@@ -64,7 +64,7 @@ export default function ToolingEcosystemSlide() {
       icon: Shield,
       color: 'text-pink-600',
       bgColor: 'bg-pink-50 dark:bg-pink-950',
-      tools: ['OWASP ZAP', 'Trivy', 'Snyk', 'SonarQube', 'Burp Suite', 'DataLoader', 'Depth limiting'],
+      tools: ['OWASP ZAP', 'Trivy', 'Snyk', 'SonarQube', 'Burp Suite', 'Playwright', 'Vitest', 'DataLoader', 'Depth limiting'],
       description: 'SAST, DAST, dependency scanning, container security, GraphQL/WebSocket testing',
     },
     {
@@ -136,7 +136,7 @@ export default function ToolingEcosystemSlide() {
         >
           <h1 className="text-4xl font-bold text-foreground">Complete Tooling Ecosystem</h1>
           <p className="text-base text-muted-foreground">
-            12 categories · 80+ tools evaluated across the full SDLC
+            12 categories · 85+ tools evaluated across the full SDLC
           </p>
           <div className="h-0.5 w-16 bg-primary rounded-full" />
         </motion.div>
