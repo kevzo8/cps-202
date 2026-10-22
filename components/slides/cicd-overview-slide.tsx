@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { GitBranch, Server, Boxes, Container, Globe, LockKeyhole, Rocket } from 'lucide-react';
+import { Server, Boxes, Container, Globe, LockKeyhole, Rocket } from 'lucide-react';
 
 const stats = [
   {
@@ -58,13 +58,13 @@ export default function CicdOverviewSlide() {
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-y-1 mb-4 flex-shrink-0"
+          className="space-y-1.5 mb-4 flex-shrink-0"
         >
-          <span className="inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20 mb-1">
+          <span className="inline-block px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
             Part 2 — CI/CD Platform
           </span>
           <h1 className="text-4xl font-bold text-foreground">CI/CD Assessment</h1>
-          <p className="text-base text-muted-foreground">
+          <p className="text-lg text-muted-foreground">
             How KYC applications build, ship, and go live today
           </p>
           <div className="h-0.5 w-16 bg-primary rounded-full" />
@@ -83,9 +83,9 @@ export default function CicdOverviewSlide() {
                 variants={item}
                 className="p-4 bg-card rounded-xl border border-border flex flex-col justify-center hover:border-primary/50 transition-all"
               >
-                <p className={`text-4xl font-bold ${stat.color}`}>{stat.value}</p>
-                <p className="text-sm font-semibold text-foreground mt-1">{stat.label}</p>
-                <p className="text-xs text-muted-foreground mt-0.5">{stat.detail}</p>
+                <p className={`text-5xl font-bold ${stat.color}`}>{stat.value}</p>
+                <p className="text-base font-semibold text-foreground mt-1.5">{stat.label}</p>
+                <p className="text-[13px] text-muted-foreground mt-1">{stat.detail}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -96,22 +96,22 @@ export default function CicdOverviewSlide() {
             transition={{ duration: 0.5, delay: 0.35 }}
             className="lg:col-span-2 bg-card rounded-xl border border-border p-4 flex flex-col"
           >
-            <h3 className="text-sm font-bold text-foreground mb-3">What we reviewed</h3>
-            <ul className="space-y-2.5 flex-1">
+            <h3 className="text-base font-bold text-foreground mb-3">What we reviewed</h3>
+            <ul className="space-y-3 flex-1">
               {scope.map((s, idx) => {
                 const Icon = s.icon;
                 return (
-                  <li key={idx} className="flex items-start gap-2.5 text-[13px] text-muted-foreground leading-snug">
-                    <span className="w-6 h-6 rounded-md bg-muted flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-3.5 h-3.5 text-primary" />
+                  <li key={idx} className="flex items-start gap-2.5 text-sm text-foreground/90 leading-snug">
+                    <span className="w-7 h-7 rounded-md bg-muted flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-4 h-4 text-primary" />
                     </span>
                     <span className="pt-1">{s.text}</span>
                   </li>
                 );
               })}
             </ul>
-            <div className="mt-3 pt-3 border-t border-border flex items-center gap-2 text-[11px] text-muted-foreground">
-              <LockKeyhole className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+            <div className="mt-3 pt-3 border-t border-border flex items-center gap-2 text-xs text-muted-foreground">
+              <LockKeyhole className="w-4 h-4 text-primary flex-shrink-0" />
               <span>Repo review, Oct 2026 · credential values never reproduced</span>
             </div>
           </motion.div>
@@ -123,9 +123,9 @@ export default function CicdOverviewSlide() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="flex-shrink-0 mt-3"
         >
-          <div className="py-2 px-4 bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center gap-2">
+          <div className="py-2.5 px-4 bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center gap-2">
             <Rocket className="w-4 h-4 text-primary flex-shrink-0" />
-            <p className="text-xs text-muted-foreground text-center">
+            <p className="text-sm text-foreground/90 text-center">
               <span className="font-semibold text-foreground">Recommendation:</span> standardize on GitLab CI/CD with one self-hosted EC2 runner — auto-deploy dev, manual gate for production
             </p>
           </div>

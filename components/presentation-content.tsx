@@ -18,8 +18,14 @@ import RecommendationSlide from './slides/recommendation-slide';
 import NextStepsSlide from './slides/next-steps-slide';
 import CicdOverviewSlide from './slides/cicd-overview-slide';
 import CicdCurrentStateSlide from './slides/cicd-current-state-slide';
+import CicdPackSlide from './slides/cicd-pack-slide';
 import CicdArchitectureSlide from './slides/cicd-architecture-slide';
-import CicdDeploymentSlide from './slides/cicd-deployment-slide';
+import CicdPipelineMapSlide from './slides/cicd-pipeline-map-slide';
+import CicdYamlWalkthroughSlide from './slides/cicd-yaml-walkthrough-slide';
+import CicdTemplateExplorerSlide from './slides/cicd-template-explorer-slide';
+import CicdScriptExplorerSlide from './slides/cicd-script-explorer-slide';
+import CicdDocsLibrarySlide from './slides/cicd-docs-library-slide';
+import CicdStandardsSlide from './slides/cicd-standards-slide';
 import CicdRoadmapSlide from './slides/cicd-roadmap-slide';
 
 const slides = [
@@ -35,9 +41,15 @@ const slides = [
   { id: 9, component: NextStepsSlide, title: 'Next Steps & Q&A' },
   { id: 10, component: CicdOverviewSlide, title: 'CI/CD Assessment' },
   { id: 11, component: CicdCurrentStateSlide, title: 'CI/CD Current State' },
-  { id: 12, component: CicdArchitectureSlide, title: 'CI/CD Target Architecture' },
-  { id: 13, component: CicdDeploymentSlide, title: 'CI/CD Deployment Model' },
-  { id: 14, component: CicdRoadmapSlide, title: 'CI/CD Roadmap & Decisions' },
+  { id: 12, component: CicdPackSlide, title: 'Report Pack' },
+  { id: 13, component: CicdArchitectureSlide, title: 'Target Architecture' },
+  { id: 14, component: CicdPipelineMapSlide, title: 'Pipeline Map' },
+  { id: 15, component: CicdYamlWalkthroughSlide, title: 'YAML Walkthrough' },
+  { id: 16, component: CicdTemplateExplorerSlide, title: 'Template Explorer' },
+  { id: 17, component: CicdScriptExplorerSlide, title: 'Script Explorer' },
+  { id: 18, component: CicdDocsLibrarySlide, title: 'Docs Library' },
+  { id: 19, component: CicdStandardsSlide, title: 'Standards & Security' },
+  { id: 20, component: CicdRoadmapSlide, title: 'Roadmap & Decisions' },
 ];
 
 export default function PresentationContent() {

@@ -1,0 +1,20 @@
+# ============================================================
+# Spring Boot runtime image
+# The CI build job must produce target/app.jar before this runs.
+# ============================================================
+FROM eclipse-temurin:25-jre-alpine
+
+ARG APP_NAME=spring-app
+LABEL org.opencontainers.image.title="${APP_NAME}"
+
+RUN addgroup -S app && adduser -S -G app app
+
+WORKDIR /app
+COPY --chown=app:app target/app.jar /app/app.jar
+
+USER app
+EXPOSE 8080
+
+ENV JAVA_OPTS="-XX:MaxRAMPercentage=75 -XX:+UseG1GC -Djava.security.egd=file:/dev/./urandom"
+
+ENTRYPOINT ["sh", "-c", "exec java $JAVA_OPTS -jar /app/app.jar"]

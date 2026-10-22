@@ -28,7 +28,7 @@ const phases = [
     points: [
       'Provision the EC2 runner (ec2-docker / ec2-deploy)',
       'Install payara-deploy + sudoers rule',
-      'Portal WAR auto-deploys to dev with smoke test',
+      'Portal WAR auto-deploys to dev with a smoke test',
       'Break it on purpose; verify rollback',
     ],
   },
@@ -43,7 +43,7 @@ const phases = [
       'Dockerfile + Compose on the app host',
       'Auth service runs its 51 tests in CI',
       'Health-checked deploy to dev',
-      'Container registry push + rollback image',
+      'Registry push + previous image for rollback',
     ],
   },
   {
@@ -54,9 +54,9 @@ const phases = [
     border: 'border-green-200 dark:border-green-800',
     bg: 'bg-green-50 dark:bg-green-950/30',
     points: [
-      'Roll out to remaining repos',
+      'Roll out to the remaining repos',
       'Jira keys + MR conventions enforced',
-      'Prod tag gate and release notes',
+      'Production tag gate and release notes',
       'Monitoring and deployment records',
     ],
   },
@@ -90,20 +90,20 @@ export default function CicdRoadmapSlide() {
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-y-1 mb-4 flex-shrink-0"
+          className="space-y-1.5 mb-3 flex-shrink-0"
         >
-          <span className="inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20 mb-1">
+          <span className="inline-block px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
             Part 2 — Rollout
           </span>
           <h1 className="text-4xl font-bold text-foreground">Six Weeks to a Repeatable Release</h1>
-          <p className="text-base text-muted-foreground">
-            Pilot two apps, then standardize across the platform
+          <p className="text-lg text-muted-foreground">
+            Pilot two applications, then standardize across the platform
           </p>
           <div className="h-0.5 w-16 bg-primary rounded-full" />
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 flex-1"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 flex-1 min-h-0"
           variants={container}
           initial="hidden"
           animate="show"
@@ -117,17 +117,17 @@ export default function CicdRoadmapSlide() {
                 className={`${phase.bg} ${phase.border} border-2 rounded-xl p-3.5 flex flex-col hover:border-primary/50 transition-all`}
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-8 h-8 rounded-lg bg-background shadow-sm flex items-center justify-center flex-shrink-0">
-                    <Icon className={`${phase.color} w-4 h-4`} />
+                  <div className="w-9 h-9 rounded-lg bg-background shadow-sm flex items-center justify-center flex-shrink-0">
+                    <Icon className={`${phase.color} w-[18px] h-[18px]`} />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[10px] font-bold font-mono text-muted-foreground uppercase">{phase.period}</p>
-                    <h3 className="text-sm font-bold text-foreground leading-tight">{phase.title}</h3>
+                    <p className="text-[11px] font-bold font-mono text-muted-foreground uppercase">{phase.period}</p>
+                    <h3 className="text-base font-bold text-foreground leading-tight">{phase.title}</h3>
                   </div>
                 </div>
-                <ul className="space-y-1.5 flex-1">
+                <ul className="space-y-2 flex-1">
                   {phase.points.map((p, i) => (
-                    <li key={i} className="flex items-start gap-1.5 text-xs text-muted-foreground leading-snug">
+                    <li key={i} className="flex items-start gap-1.5 text-[13px] text-foreground/80 leading-snug">
                       <span className={`${phase.color} mt-[3px] flex-shrink-0 text-[10px]`}>✦</span>
                       <span>{p}</span>
                     </li>
@@ -142,28 +142,29 @@ export default function CicdRoadmapSlide() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="flex-shrink-0 mt-3 space-y-3"
+          className="flex-shrink-0 mt-2.5 space-y-2.5"
         >
           <div className="p-3 bg-card border border-border rounded-lg">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-2">Decisions needed from leadership</p>
+            <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground mb-2">
+              Decisions needed from leadership
+            </p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
               {decisions.map((d, idx) => (
-                <div key={idx} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                  <BadgeCheck className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                <div key={idx} className="flex items-center gap-1.5 text-[12.5px] text-foreground/85">
+                  <BadgeCheck className="w-4 h-4 text-primary flex-shrink-0" />
                   <span>{d}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="text-center p-3 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg border border-primary/30">
-            <div className="flex items-center justify-center gap-2 mb-1">
-              <MessageCircle className="w-4 h-4 text-primary" />
-              <h3 className="text-sm font-bold text-foreground">Questions?</h3>
+          <div className="text-center px-3 py-2 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg border border-primary/30">
+            <div className="flex items-center justify-center gap-2">
+              <MessageCircle className="w-4 h-4 text-primary flex-shrink-0" />
+              <p className="text-[13px] text-foreground/90">
+                <span className="font-bold text-foreground">Questions?</span> The full pack is ready to hand over: 9 docs · 6 pipeline templates · 5 deploy scripts — copy into repos as-is
+              </p>
             </div>
-            <p className="text-xs text-muted-foreground">
-              Full pack ready to hand over: 7 guides · 6 pipeline templates · 5 deploy scripts — copy into repos as-is
-            </p>
           </div>
         </motion.div>
       </motion.div>

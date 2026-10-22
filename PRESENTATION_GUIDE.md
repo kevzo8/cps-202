@@ -8,7 +8,7 @@ A world-class, interactive executive presentation for Software Ventures Internat
 **Title:** CPS-202 SPIKE: Security & Integration Review  
 **Subtitle:** Initial RBAC Release & SSO Feasibility + CI/CD Platform Assessment  
 **Sprint:** Sprint 4 Demo & Review  
-**Duration:** ~40-45 minutes (15 slides: Part 1 security assessment, Part 2 CI/CD platform)  
+**Duration:** ~50-55 minutes (21 slides: Part 1 security assessment, Part 2 CI/CD platform)  
 **Format:** Full-screen, keyboard-navigable presentation deck  
 **Year:** 2026  
 
@@ -37,22 +37,17 @@ A world-class, interactive executive presentation for Software Ventures Internat
 - Color-coded by priority (red for CRITICAL, orange for HIGH)
 - Business impact summary for each issue
 
-### 5. **Remediation Status** — All Issues Addressed
-- Bar chart (Recharts) showing issues by severity
-- Summary stats: 8 total, 7 fixed, 1 conditional, 88% success rate
-- Visual progress indicators
-
-### 6. **Business Impact** — Before/After Risk Reduction
+### 5. **Business Impact** — Before/After Risk Reduction
 - 4 impact areas: Security Risk, Data Protection, Operational Risk, Compliance
 - Before/after comparison for each area
 - 85% risk reduction progress bar with animation
 
-### 7. **Implementation Timeline** — 6-Week Path to Production
+### 6. **Implementation Timeline** — 6-Week Path to Production
 - 3-phase rollout with status indicators (Completed, In Progress, Planned)
 - Vertical timeline with animated connecting lines
 - Clear milestones and validation gates
 
-### 8. **Top Recommendations** — Five Strategic Initiatives
+### 7. **Top Recommendations** — Strategic Initiatives
 - **AI-Assisted Development** — Opencode & CodeRabbit integration
   - Deploy Opencode as primary AI dev agent
   - Enable CodeRabbit on all MRs with OWASP Top 10 violation detection
@@ -74,10 +69,14 @@ A world-class, interactive executive presentation for Software Ventures Internat
 - **Visual:** 5-card grid layout with color-coded backgrounds (blue, purple, amber, green, rose)
 - **Key Message:** All recommendations are immediately actionable with 6-week zero-disruption implementation
 
-### 9. **Strategic Roadmap** — Enterprise Maturity Path
-- Additional detailed tooling recommendations
+### 8. **Complete Tooling Ecosystem** — Enterprise Maturity Path
+- Full tooling map across security, quality, delivery, and observability
 - Implementation phasing and dependencies
 - Investment ROI and team enablement metrics
+
+### 9. **Strategic Roadmap** — Where to Invest Next
+- Prioritized next steps beyond the current sprint
+- Mapping recommendations to business outcomes
 
 ### 10. **Next Steps & Q&A** — Part 1 Closing
 - 4 immediate action items with timeline
@@ -93,20 +92,49 @@ A world-class, interactive executive presentation for Software Ventures Internat
 - Six risk cards with severity badges: secrets committed, manual deploys, tests skipped, version drift, environment confusion, no rollback path
 - Each card shows concrete evidence and the business impact
 
-### 13. **CI/CD Target Architecture** — One Pipeline, Three Lanes
+### 13. **Report Pack** — What Was Delivered
+- Repository layout for all 22 assets served from `public/ci-cd-reports/`
+- Three groups: documentation (9 markdown files), pipeline templates (6 GitLab YAMLs + 2 container files), server automation (5 scripts)
+- Sets up the next slides, which render the real files in the deck
+
+### 14. **CI/CD Target Architecture** — One Pipeline, Three Lanes
 - Horizontal flow: Source → Pipeline → Artifacts → Runner → Targets
 - Three deployment lanes with details: Payara WAR (SSH + asadmin), Spring Boot / Node (Compose + rollback image), Next.js / Vercel (preview + prod)
 - Security band: no static AWS keys, masked/protected variables, OIDC where needed
 
-### 14. **CI/CD Deployment Model** — Dev vs Prod Gates
-- Development lane: automatic build/test/scan/deploy/smoke on every merge
-- Production lane: tag vX.Y.Z → immutable artifact → manual approval → deploy → smoke
-- Pipeline stage strip, plus automatic rollback guarantees (health check, last 10 backups, <5 min recovery)
+### 15. **Pipeline Map** — Actual Stages and Gates
+- 12-stage matrix across merge request, development push, and `v*` tag pipelines
+- Real job names: validate:tag, validate:mr-title, build, test, package, secret_detection, publish, deploy:dev, verify:dev, deploy:prod, verify:prod, rollback:prod, notify
+- Automatic vs manual vs MR-only legend; notes for Docker and Next.js template differences
 
-### 15. **CI/CD Roadmap & Decisions** — Closing
+### 16. **YAML Walkthrough** — Verbatim Pipeline Rules
+- Annotated excerpts from the delivered `.gitlab-ci.yml` templates
+- `workflow` dedupe rules, runner defaults and retries, dev auto-deploy, prod tag + manual gate
+- Bottom note on Secret Detection and non-interruptible deploy jobs
+
+### 17. **Template Explorer** — Interactive File Viewer
+- In-deck viewer with all 8 template assets (6 pipelines, Dockerfile, Compose file)
+- Full pipeline YAML readable without leaving the presentation
+- Sidebar notes describe the target app type for each template
+
+### 18. **Script Explorer** — Deploy Automation
+- In-deck viewer with all 5 shell scripts: payara-deploy, deploy-compose, smoke-test, ec2-bootstrap-runner, jira-transition
+- Shows the exact backup, health-check, and rollback behavior referenced in the report
+
+### 19. **Docs Library** — Markdown Viewer
+- All 9 markdown documents rendered inside the deck (README, guides 01–07, MR template)
+- GFM tables, code blocks, and links supported
+- Lets the audience drill into any section without opening files externally
+
+### 20. **Standards & Security** — How We Work Safely
+- Branch model, release tags, merge request conventions, release records
+- Security guardrails: rotate then purge, masked/protected variables, Secret Detection, runner hardening
+- Four non-negotiables strip
+
+### 21. **Roadmap & Decisions** — Closing
 - 4-phase rollout: security first, runner + Payara pilot, Spring Boot pilot, standardize
 - Decisions needed from leadership (4 items)
-- Handover note: 7 guides, 6 pipeline templates, 5 deploy scripts ready to copy
+- Handover note: 9 docs, 6 pipeline templates, 5 deploy scripts ready to copy
 
 ---
 
@@ -119,7 +147,7 @@ A world-class, interactive executive presentation for Software Ventures Internat
 ### On-Screen Controls
 - **Left/Right Buttons** — Navigate slides
 - **Dot Indicators** — Jump to any slide
-- **Slide Counter** — Current position (e.g., "2 / 15")
+- **Slide Counter** — Current position (e.g., "2 / 21")
 
 ### Tips
 - Use arrow keys for smooth transitions
@@ -174,14 +202,15 @@ A world-class, interactive executive presentation for Software Ventures Internat
 1. **Start on Slide 1** — Title slide sets the stage
 2. **Use keyboard** for smooth, professional transitions
 3. **Pause on Key Slides** (Status, Impact, Timeline) to discuss details
-4. **Part 2 (Slides 11–15)** — CI/CD platform assessment: current state, architecture, deployment model, roadmap
-5. **Close on Slide 15** — Q&A and decisions are built in, leaves floor open for discussion
+4. **Part 2 (Slides 11–21)** — CI/CD platform: current state, report pack, architecture, pipeline map, YAML walkthrough, live file and docs viewers, standards, roadmap
+5. **Close on Slide 21** — Q&A and decisions are built in, leaves floor open for discussion
 
 ### Tips for Executives
-- Lead with impact (Slide 6: 85% risk reduction)
-- Show timeline confidence (Slide 7: Detailed 6-week plan)
+- Lead with impact (Slide 5: 85% risk reduction)
+- Show timeline confidence (Slide 6: Detailed 6-week plan)
 - Emphasize preparedness (Slide 4: All issues identified and 88% fixed)
-- For CI/CD: anchor on Slide 11 stats (0 automated deploys, 51 skipped tests) and Slide 15 decisions
+- For CI/CD: anchor on Slide 11 stats (0 automated deploys, 51 skipped tests) and Slide 21 decisions
+- Use Slides 17–19 to open any pipeline, script, or document live if the audience asks for evidence
 
 ---
 
@@ -206,27 +235,42 @@ A world-class, interactive executive presentation for Software Ventures Internat
 components/
 ├── presentation-content.tsx  (Main presenter + controls)
 ├── presentation-wrapper.tsx  (Client wrapper)
+├── cicd/
+│   ├── code-viewer.tsx       (File explorer for templates + scripts)
+│   └── markdown-viewer.tsx   (Rendered markdown docs browser)
 └── slides/
     ├── title-slide.tsx       (Opening - Sprint 4 Demo & Review)
     ├── agenda-slide.tsx      (Overview - 9 items)
     ├── scope-slide.tsx       (What was reviewed)
     ├── finding-slide.tsx     (Key issues P0-P3)
-    ├── status-slide.tsx      (Chart + stats - 88% completion)
     ├── impact-slide.tsx      (Before/after - 85% risk reduction)
     ├── timeline-slide.tsx    (6-week rollout with milestones)
-    ├── top-recommendations-slide.tsx (6 strategic initiatives)
-    ├── recommendation-slide.tsx (Detailed tooling roadmap)
+    ├── top-recommendations-slide.tsx (Strategic initiatives)
+    ├── tooling-ecosystem-slide.tsx   (Complete tooling ecosystem)
+    ├── recommendation-slide.tsx      (Strategic roadmap)
     ├── next-steps-slide.tsx  (Part 1 action items + Q&A)
-    ├── cicd-overview-slide.tsx       (Part 2 - CI/CD assessment)
-    ├── cicd-current-state-slide.tsx  (Part 2 - current state risks)
-    ├── cicd-architecture-slide.tsx   (Part 2 - target architecture)
-    ├── cicd-deployment-slide.tsx     (Part 2 - dev vs prod gates)
-    └── cicd-roadmap-slide.tsx        (Part 2 - roadmap + decisions)
+    ├── cicd-overview-slide.tsx        (Part 2 - CI/CD assessment)
+    ├── cicd-current-state-slide.tsx   (Part 2 - current state risks)
+    ├── cicd-pack-slide.tsx            (Part 2 - report pack inventory)
+    ├── cicd-architecture-slide.tsx    (Part 2 - target architecture)
+    ├── cicd-pipeline-map-slide.tsx    (Part 2 - stage/job matrix)
+    ├── cicd-yaml-walkthrough-slide.tsx (Part 2 - annotated YAML)
+    ├── cicd-template-explorer-slide.tsx (Part 2 - live YAML viewer)
+    ├── cicd-script-explorer-slide.tsx  (Part 2 - live script viewer)
+    ├── cicd-docs-library-slide.tsx     (Part 2 - markdown docs viewer)
+    ├── cicd-standards-slide.tsx        (Part 2 - standards + security)
+    └── cicd-roadmap-slide.tsx          (Part 2 - roadmap + decisions)
 
 app/
 ├── layout.tsx               (App shell, metadata)
 ├── page.tsx                 (Entry point)
 └── globals.css              (Theme, colors, fonts)
+
+public/
+└── ci-cd-reports/           (22 report assets served to the in-deck viewers)
+    ├── README.md + 01-07 + MR-TEMPLATE.md
+    ├── templates/           (6 pipelines + Dockerfile + compose)
+    └── scripts/             (5 shell scripts)
 ```
 
 ---
@@ -243,7 +287,7 @@ app/
 ## Support & Troubleshooting
 
 ### Issue: Slide won't advance
-**Solution:** Ensure the last slide has not been reached. Left arrow disabled on Slide 1, right arrow disabled on Slide 15.
+**Solution:** Ensure the last slide has not been reached. Left arrow disabled on Slide 1, right arrow disabled on Slide 21.
 
 ### Issue: Animations stuttering
 **Solution:** Close other browser tabs, disable heavy extensions, ensure GPU acceleration enabled.
@@ -288,6 +332,8 @@ pnpm dev
 - **Automated deploys today:** 0
 - **Spring Boot tests skipped:** 51
 - **CI files with committed AWS keys:** 2 (plus secrets in tracked configs)
+- **Report assets delivered:** 22 (9 markdown docs, 6 pipeline templates, 2 container files, 5 scripts)
+- **Jobs in the standard pipeline:** 13 across 12 stages
 - **Target time from merge to dev:** under 15 minutes
 - **Target rollback time:** under 5 minutes
 - **Platform pilot timeline:** 6 weeks (2 pilots, then standardize)
