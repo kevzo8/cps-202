@@ -6,9 +6,9 @@ A world-class, interactive executive presentation for Software Ventures Internat
 ## Presentation Details
 
 **Title:** CPS-202 SPIKE: Security & Integration Review  
-**Subtitle:** Initial RBAC Release & SSO Feasibility  
+**Subtitle:** Initial RBAC Release & SSO Feasibility + CI/CD Platform Assessment  
 **Sprint:** Sprint 4 Demo & Review  
-**Duration:** ~25-30 minutes (10 slides)  
+**Duration:** ~40-45 minutes (15 slides: Part 1 security assessment, Part 2 CI/CD platform)  
 **Format:** Full-screen, keyboard-navigable presentation deck  
 **Year:** 2026  
 
@@ -79,10 +79,34 @@ A world-class, interactive executive presentation for Software Ventures Internat
 - Implementation phasing and dependencies
 - Investment ROI and team enablement metrics
 
-### 10. **Next Steps & Q&A** — Closing
+### 10. **Next Steps & Q&A** — Part 1 Closing
 - 4 immediate action items with timeline
 - Support boxes: Ready, Support, Questions?
 - Closing statement with success badges
+
+### 11. **CI/CD Assessment** — Part 2 Opening
+- Headline stats: 6 legacy build-only pipelines, 0 automated deploys, 51 skipped Spring Boot tests, 2 CI files with AWS keys
+- Scope card: Payara WARs, Spring Boot 4 / Java 25 services, Node/Docker DigiCash, Next.js/Convex on Vercel
+- Recommendation callout: standardize on GitLab CI/CD with one self-hosted EC2 runner
+
+### 12. **CI/CD Current State** — Why It Hurts
+- Six risk cards with severity badges: secrets committed, manual deploys, tests skipped, version drift, environment confusion, no rollback path
+- Each card shows concrete evidence and the business impact
+
+### 13. **CI/CD Target Architecture** — One Pipeline, Three Lanes
+- Horizontal flow: Source → Pipeline → Artifacts → Runner → Targets
+- Three deployment lanes with details: Payara WAR (SSH + asadmin), Spring Boot / Node (Compose + rollback image), Next.js / Vercel (preview + prod)
+- Security band: no static AWS keys, masked/protected variables, OIDC where needed
+
+### 14. **CI/CD Deployment Model** — Dev vs Prod Gates
+- Development lane: automatic build/test/scan/deploy/smoke on every merge
+- Production lane: tag vX.Y.Z → immutable artifact → manual approval → deploy → smoke
+- Pipeline stage strip, plus automatic rollback guarantees (health check, last 10 backups, <5 min recovery)
+
+### 15. **CI/CD Roadmap & Decisions** — Closing
+- 4-phase rollout: security first, runner + Payara pilot, Spring Boot pilot, standardize
+- Decisions needed from leadership (4 items)
+- Handover note: 7 guides, 6 pipeline templates, 5 deploy scripts ready to copy
 
 ---
 
@@ -95,7 +119,7 @@ A world-class, interactive executive presentation for Software Ventures Internat
 ### On-Screen Controls
 - **Left/Right Buttons** — Navigate slides
 - **Dot Indicators** — Jump to any slide
-- **Slide Counter** — Current position (e.g., "2 / 9")
+- **Slide Counter** — Current position (e.g., "2 / 15")
 
 ### Tips
 - Use arrow keys for smooth transitions
@@ -150,14 +174,14 @@ A world-class, interactive executive presentation for Software Ventures Internat
 1. **Start on Slide 1** — Title slide sets the stage
 2. **Use keyboard** for smooth, professional transitions
 3. **Pause on Key Slides** (Status, Impact, Timeline) to discuss details
-4. **Point to metrics** (success rate, timeline, risk reduction) for emphasis
-5. **Close on Slide 9** — Q&A is built in, leaves floor open for discussion
+4. **Part 2 (Slides 11–15)** — CI/CD platform assessment: current state, architecture, deployment model, roadmap
+5. **Close on Slide 15** — Q&A and decisions are built in, leaves floor open for discussion
 
 ### Tips for Executives
 - Lead with impact (Slide 6: 85% risk reduction)
 - Show timeline confidence (Slide 7: Detailed 6-week plan)
 - Emphasize preparedness (Slide 4: All issues identified and 88% fixed)
-- Close with action items (Slide 9: Ready to launch)
+- For CI/CD: anchor on Slide 11 stats (0 automated deploys, 51 skipped tests) and Slide 15 decisions
 
 ---
 
@@ -170,7 +194,7 @@ A world-class, interactive executive presentation for Software Ventures Internat
 - **Timeline:** Adjust dates in timeline-slide.tsx
 
 ### Advanced Changes
-- Add new slides by creating `/components/slides/new-slide.tsx` and importing in `presentation.tsx`
+- Add new slides by creating `/components/slides/new-slide.tsx` and importing in `presentation-content.tsx`
 - Modify animations in Framer Motion configuration
 - Replace Recharts with other visualization libraries if needed
 
@@ -180,18 +204,24 @@ A world-class, interactive executive presentation for Software Ventures Internat
 
 ```
 components/
-├── presentation.tsx          (Main presenter + controls)
+├── presentation-content.tsx  (Main presenter + controls)
+├── presentation-wrapper.tsx  (Client wrapper)
 └── slides/
     ├── title-slide.tsx       (Opening - Sprint 4 Demo & Review)
-    ├── agenda-slide.tsx      (Overview - 7 items)
+    ├── agenda-slide.tsx      (Overview - 9 items)
     ├── scope-slide.tsx       (What was reviewed)
     ├── finding-slide.tsx     (Key issues P0-P3)
     ├── status-slide.tsx      (Chart + stats - 88% completion)
     ├── impact-slide.tsx      (Before/after - 85% risk reduction)
     ├── timeline-slide.tsx    (6-week rollout with milestones)
-    ├── top-recommendations-slide.tsx (5 strategic initiatives)
+    ├── top-recommendations-slide.tsx (6 strategic initiatives)
     ├── recommendation-slide.tsx (Detailed tooling roadmap)
-    └── next-steps-slide.tsx  (Action items + Q&A)
+    ├── next-steps-slide.tsx  (Part 1 action items + Q&A)
+    ├── cicd-overview-slide.tsx       (Part 2 - CI/CD assessment)
+    ├── cicd-current-state-slide.tsx  (Part 2 - current state risks)
+    ├── cicd-architecture-slide.tsx   (Part 2 - target architecture)
+    ├── cicd-deployment-slide.tsx     (Part 2 - dev vs prod gates)
+    └── cicd-roadmap-slide.tsx        (Part 2 - roadmap + decisions)
 
 app/
 ├── layout.tsx               (App shell, metadata)
@@ -213,7 +243,7 @@ app/
 ## Support & Troubleshooting
 
 ### Issue: Slide won't advance
-**Solution:** Ensure you're on the last slide hasn't been reached. Left arrow disabled on Slide 1, right arrow disabled on Slide 9.
+**Solution:** Ensure the last slide has not been reached. Left arrow disabled on Slide 1, right arrow disabled on Slide 15.
 
 ### Issue: Animations stuttering
 **Solution:** Close other browser tabs, disable heavy extensions, ensure GPU acceleration enabled.
@@ -243,6 +273,7 @@ pnpm dev
 
 ## Key Metrics at a Glance
 
+### Part 1 — Security Assessment
 - **Total Issues Identified:** 8
 - **Issues Fixed:** 7 (88%)
 - **Conditional Fixes:** 1 (architecture review pending)
@@ -251,6 +282,15 @@ pnpm dev
 - **Uptime Target:** 99.99%
 - **Mean Time to Detect:** < 5 minutes
 - **Security Score:** A+
+
+### Part 2 — CI/CD Platform
+- **Repos with legacy CI:** 6 (all build-only, zero deploy jobs)
+- **Automated deploys today:** 0
+- **Spring Boot tests skipped:** 51
+- **CI files with committed AWS keys:** 2 (plus secrets in tracked configs)
+- **Target time from merge to dev:** under 15 minutes
+- **Target rollback time:** under 5 minutes
+- **Platform pilot timeline:** 6 weeks (2 pilots, then standardize)
 
 ---
 

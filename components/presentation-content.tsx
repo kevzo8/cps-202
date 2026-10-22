@@ -16,6 +16,11 @@ import TopRecommendationsSlide from './slides/top-recommendations-slide';
 import ToolingEcosystemSlide from './slides/tooling-ecosystem-slide';
 import RecommendationSlide from './slides/recommendation-slide';
 import NextStepsSlide from './slides/next-steps-slide';
+import CicdOverviewSlide from './slides/cicd-overview-slide';
+import CicdCurrentStateSlide from './slides/cicd-current-state-slide';
+import CicdArchitectureSlide from './slides/cicd-architecture-slide';
+import CicdDeploymentSlide from './slides/cicd-deployment-slide';
+import CicdRoadmapSlide from './slides/cicd-roadmap-slide';
 
 const slides = [
   { id: 0, component: TitleSlide, title: 'Title' },
@@ -28,6 +33,11 @@ const slides = [
   { id: 7, component: ToolingEcosystemSlide, title: 'Complete Tooling Ecosystem' },
   { id: 8, component: RecommendationSlide, title: 'Strategic Roadmap' },
   { id: 9, component: NextStepsSlide, title: 'Next Steps & Q&A' },
+  { id: 10, component: CicdOverviewSlide, title: 'CI/CD Assessment' },
+  { id: 11, component: CicdCurrentStateSlide, title: 'CI/CD Current State' },
+  { id: 12, component: CicdArchitectureSlide, title: 'CI/CD Target Architecture' },
+  { id: 13, component: CicdDeploymentSlide, title: 'CI/CD Deployment Model' },
+  { id: 14, component: CicdRoadmapSlide, title: 'CI/CD Roadmap & Decisions' },
 ];
 
 export default function PresentationContent() {
